@@ -74,6 +74,7 @@ int main(int argc, char *argv[])
             // read RGB triple from infile
             fread(&triple, sizeof(RGBTRIPLE), 1, inptr);
             
+            // eliminate the red noise
             if (triple.rgbtRed >= 250)
             {
                 triple.rgbtRed = 0x00;
